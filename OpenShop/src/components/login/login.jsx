@@ -19,7 +19,7 @@ const Login = () => {
                 setLogin("true");
                 document.getElementById('form').style.display="none";
             } else{
-                setLogin("falso");
+                setLogin("false");
                 alert("error");
                 document.getElementById('txtuser').value="";
                 document.getElementById('txtpass').value="";
@@ -34,11 +34,11 @@ const Login = () => {
                 <form id="form_login">
                     <div>
                         <h1 style={{textAlign: "center"}}>LOGIN</h1>
-                        <label htmlFor="txtuser"><strong>Username</strong></label>
+                        <label htmlFor="txtuser"><strong>Usuario</strong></label>
                         <input type="text" id="txtuser" style={{textAlign:"center"}} className="form-control" onChange={ (e) => setUser(e.target.value) } required/>
                     </div>
                     <div>
-                        <label htmlFor="txtpass"><strong>Password</strong></label>
+                        <label htmlFor="txtpass"><strong>Contraseña</strong></label>
                         <input type="password" id="txtpass" style={{textAlign:"center"}} className="form-control" onChange={ (e) => setPass(e.target.value) } required/>
                     </div><br/>
                     <input type="submit" onClick={Iniciar} className="btn btn-primary" value="Login"/>
