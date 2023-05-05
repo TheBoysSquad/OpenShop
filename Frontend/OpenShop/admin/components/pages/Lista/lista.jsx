@@ -27,9 +27,9 @@ const ListaProductos = ({ productos }) =>{
             </thead>
             <tbody>
                 {/* Arreglar error con el map */}
-                { productos.map((producto, index) =>
-                    <tr key={producto.id}>
-                        <th>{index+1}</th>
+                { productos.map((producto,index)  => (
+                    <tr key={index}>
+                        <th>{producto.id}</th>
                         <th>{producto.nombre}</th>
                         <th>{producto.descripcion}</th>
                         <th>{producto.precio}</th>
@@ -39,7 +39,7 @@ const ListaProductos = ({ productos }) =>{
                             <img src={producto.imagen} alt={producto.nombre}/>
                         </th>
                     </tr>
-                )}
+                ))}
             </tbody>
     </Table>
         </>

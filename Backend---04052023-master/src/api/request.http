@@ -11,18 +11,20 @@ POST http://127.0.0.1:9000/api/users HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Andres Camacho",
-    "password": "gasd.com",
-    "email": "afasda@gmail.com",
-    "producto": "Arma"
+    "nombre": "camisa",
+    "descripcion": "algodon",
+    "precio": "200000",
+    "stock": "23",
+    "tipo": "ropa"
 }
 ### ACTUALIZAR USUARIO
 PUT http://127.0.0.1:9000/api/users/6453e75343185f27fa223cb8 HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Andres Gamaño",
-    "password": "gasd.com",
-    "email": "afasda@gmail.com",
-    "producto": "Arma"
+    "nombre": "camisa",
+    "descripcion": "algodon",
+    "precio": "200000",
+    "stock": "23",
+    "tipo": "ropa"
 }

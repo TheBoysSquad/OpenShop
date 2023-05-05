@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const db = 'mongodb://127.0.0.1:27017/api'
+const db = 'mongodb+srv://af01camacho:awdr3sf1661@cluster0.d5ivlsp.mongodb.net/'
 // Conexion
 mongoose.connect(db)
     .then(()=> {console.log('<--------------Conectado a la base de datos------------->')

@@ -29,9 +29,9 @@ router.get('/users/:id', (req, res) =>{
 // Actualizar por ID el usuario
 router.put('/users/:id', (req, res) =>{
     const { id } = req.params;
-    const { name, password, email, producto } = req.body;
+    const { nombre, descripcion, precio, stock, tipo } = req.body;
     userSchema
-        .updateOne({ _id: id }, { $set:{ name, password, email, producto } })
+        .updateOne({ _id: id }, { $set:{ nombre, descripcion, precio, stock, tipo } })
         .then((data) => res.json(data))
         .catch((err) => res.json({ msg: err}))
 });
