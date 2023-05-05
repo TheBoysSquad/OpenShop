@@ -9,9 +9,17 @@ import Header from '../Header/header';
 
 const HomeAdmin = () => {
 
-    return ( <> <Header />
-        <h1>aqui va una lista</h1>
-        </>
+    const [productos, setProductos] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:8000/api/productos')
+          .then(res => res.json())
+          .then(data => setProductos(data))
+          .catch(err => console.log(err))
+    }, [])
+
+    return ( <div>
+        <ListaProductos productos={productos}/>
+        </div>
     )
 }
 
