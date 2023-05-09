@@ -1,7 +1,15 @@
+import './home.css';
+/* Pages */
+import Header from '../Header/header';
+import img from '../../../assets/img/hero.png';
+
 const Home = () => {
-    return <div>
-        <img width="100%" src="https://upload.wikimedia.org/wikipedia/commons/1/1e/SITIO-EN-CONSTRUCCION.jpg" alt="sitio web en contrucción" />
+    return <> <Header />
+    <div className="linea"></div>
+    <div>
+        <img src={img} alt='hero' className='hero'/>
     </div>
+    </>
 }
 
 export default Home;

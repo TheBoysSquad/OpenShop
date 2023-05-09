@@ -20,6 +20,10 @@ const userSchema = mongoose.Schema({
     tipo: {
         type: String,
         required: true
+    },
+    imagen: {
+        type: String,
+        required: true
     }
 })
 

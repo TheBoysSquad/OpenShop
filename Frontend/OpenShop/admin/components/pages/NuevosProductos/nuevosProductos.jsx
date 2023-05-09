@@ -1,14 +1,14 @@
 import './nuevosProductos.css';
 /* Hook */
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 /* Componets */
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Table } from 'react-bootstrap';
 /* Pages */
 import Header from '../Header/header';
 
 const NuevosProductos = () =>{
 
-    const [regisPro, setRegisPro] = useState();
+    const [regisPro, setRegisPro] = useState([]);
 
     const [nombre, setNombre] = useState("");
     const [descrip, setDescrip] = useState("");
@@ -17,17 +17,25 @@ const NuevosProductos = () =>{
     const [tipo, setTipo] = useState("");
     const [img, setImg] = useState(null);
 
-    const Registrar = (e) => {
+    const Registrar = async  (e) => {
             e.preventDefault();
-            console.log(nombre, descrip, precio, stock, tipo, img);
-            setRegisPro({
-                nombre: nombre, descrip: descrip, precio: precio, stock: stock, tipo: tipo, img: img
-            });
-            if(!img){
-                alert('Debes seleccionar una imagen');
+            const nuevoProducto = {nombre, descrip, precio, stock, tipo, img};
+            if (!regisPro.length === 0) {
+              setRegisPro([nuevoProducto]);
+            } else {
+              setRegisPro([...regisPro, nuevoProducto]);
             }
             limpiarCampos();
         }
+        useEffect(() => {
+          fetch("http://localhost:9000/api/users", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ regisPro })
+          });
+        }, [regisPro]);
+
+
         // Importar funciones en arhcivos JS
         function limpiarCampos(){
             setImg("");
@@ -40,8 +48,8 @@ const NuevosProductos = () =>{
 
     return (
     <>
-    <Header />
-    <div className="login">
+      <Header />
+      <div className="login">
           <Form method="POST" id="formulario" className="login_form">
           <h1 className="login_titulo" >Registrar Productos</h1>
             <Form.Group controlId="formProductName">
@@ -76,8 +84,38 @@ const NuevosProductos = () =>{
               Registrar producto
             </Button>
           </Form>
-    </div>
-        </>
+      </div>
+      <h1>Lista de productos</h1>
+      <Table striped bordered hover>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Tipo</th>
+                    <th>Imagen</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                { regisPro.map((producto,index)  => (
+                    <tr key={index}>
+                        <td>{index+1}</td>
+                        <td>{producto.nombre}</td>
+                        <td>{producto.descrip}</td>
+                        <td>{producto.precio}</td>
+                        <td>{producto.stock}</td>
+                        <td>{producto.tipo}</td>
+                        <td>
+                            <img src={producto.imagen} alt={producto.nombre}/>
+                        </td>
+                    </tr>
+                ))}
+            </tbody>
+      </Table>
+    </>
     )
 }
 

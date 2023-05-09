@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import ListaProductos from '../Lista/lista';
 
 // Pages
-import Header from '../Header/header';
+
 
 const HomeAdmin = () => {
 

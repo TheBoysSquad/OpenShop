@@ -1,0 +1,10 @@
+div{
+    background-color: #010000;
+}
+
+.linea{
+    width: 80%;
+    margin: auto;
+    height: 1px;
+    background-color: white;
+}

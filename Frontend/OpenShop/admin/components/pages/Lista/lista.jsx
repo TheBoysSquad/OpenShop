@@ -1,14 +1,19 @@
 import './lista.css';
+import { useState, useEffect } from 'react';
 /* Components */
-import PropTypes from 'prop-types';
+
 import Table from 'react-bootstrap/Table';
 /* Pages */
 import Header from '../Header/header';
 
-const ListaProductos = ({ productos }) =>{
-    ListaProductos.propTypes = {
-        productos: PropTypes.array.isRequired
-    }
+const ListaProductos = () =>{
+    const [regisPro, setRegisPro] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:9000/api/users')
+          .then(res => res.json())
+          .then(data => setRegisPro(data))
+          .catch(err => console.log(err))
+    }, [])
 
     return(<>
         <Header />
@@ -26,23 +31,23 @@ const ListaProductos = ({ productos }) =>{
                 </tr>
             </thead>
             <tbody>
-                {/* Arreglar error con el map */}
-                { productos.map((producto,index)  => (
+
+                { regisPro.map((producto,index)  => (
                     <tr key={index}>
-                        <th>{producto.id}</th>
-                        <th>{producto.nombre}</th>
-                        <th>{producto.descripcion}</th>
-                        <th>{producto.precio}</th>
-                        <th>{producto.stock}</th>
-                        <th>{producto.tipo}</th>
-                        <th>
+                        <td>{index+1}</td>
+                        <td>{producto.nombre}</td>
+                        <td>{producto.descripcion}</td>
+                        <td>{producto.precio}</td>
+                        <td>{producto.stock}</td>
+                        <td>{producto.tipo}</td>
+                        <td>
                             <img src={producto.imagen} alt={producto.nombre}/>
-                        </th>
+                        </td>
                     </tr>
                 ))}
             </tbody>
-    </Table>
-        </>
+        </Table>
+    </>
     )
 }
 

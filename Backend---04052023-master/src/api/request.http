@@ -15,7 +15,8 @@ Content-Type: application/json
     "descripcion": "algodon",
     "precio": "200000",
     "stock": "23",
-    "tipo": "ropa"
+    "tipo": "ropa",
+    "imagen": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
 }
 ### ACTUALIZAR USUARIO
 PUT http://127.0.0.1:9000/api/users/6453e75343185f27fa223cb8 HTTP/1.1
