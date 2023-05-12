@@ -11,7 +11,7 @@ const HomeAdmin = () => {
 
     const [productos, setProductos] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:9000/api/users')
+        fetch('http://localhost:9000/api/productos')
           .then(res => res.json())
           .then(data => setProductos(data))
           .catch(err => console.log(err))

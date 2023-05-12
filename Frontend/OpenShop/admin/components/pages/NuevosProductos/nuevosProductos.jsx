@@ -28,7 +28,7 @@ const NuevosProductos = () =>{
             limpiarCampos();
         }
         useEffect(() => {
-          fetch("http://localhost:9000/api/users", {
+          fetch("http://localhost:9000/api/productos", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ regisPro })

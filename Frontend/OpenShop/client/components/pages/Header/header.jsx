@@ -19,7 +19,14 @@ const Header  = () =>{
                     </li>
                 </ul>
             </nav>
-            <box-icon name='cart-alt' type='solid' color='#ffffff'></box-icon>
+            <div className="iconos">
+                <Link to='/carrito' className='icono_link'>
+                    <box-icon name='cart-alt' type='solid' color='#ffffff'></box-icon>
+                </Link>
+                <Link to='/registrar' className='icono_link'>
+                    <box-icon name='user' type='solid' color='#ffffff' ></box-icon>
+                </Link>
+            </div>
         </div>
     </>
     )

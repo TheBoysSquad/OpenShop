@@ -36,6 +36,7 @@
     color: white;
 }
 
-box-icon{
-    cursor: pointer;
+.iconos{
+    display: flex;
+    gap: 10px;
 }

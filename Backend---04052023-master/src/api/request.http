@@ -1,31 +1,32 @@
-### CONSULTAR UN USUARIO
-GET http://127.0.0.1:9000/api/users/6453e75343185f27fa223cb8 HTTP/1.1
+### CONSULTAR UN PRODUCTOS
+GET http://127.0.0.1:9000/api/productos/6453e75343185f27fa223cb8 HTTP/1.1
 
-### CONSULTAR TODOS LOS UUSUARIOS
+### CONSULTAR TODOS LOS PRODUCTOS
 
 
-GET http://127.0.0.1:9000/api/users/ HTTP/1.1
+GET http://127.0.0.1:9000/api/productos/ HTTP/1.1
 
-###ENVIAR USUARIO
-POST http://127.0.0.1:9000/api/users HTTP/1.1
+###ENVIAR PRODUCTOS
+POST http://127.0.0.1:9000/api/productos HTTP/1.1
 Content-Type: application/json
 
 {
     "nombre": "camisa",
-    "descripcion": "algodon",
+    "descripcion": "Camsia negra de algodon, talla S",
     "precio": "200000",
     "stock": "23",
     "tipo": "ropa",
-    "imagen": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
+    "imagen": "https://png.pngtree.com/png-clipart/20210227/ourmid/pngtree-calvin-klein-black-shirt-front-png-image_2962562.jpg"
 }
-### ACTUALIZAR USUARIO
+### ACTUALIZAR PRODUCTOS
 PUT http://127.0.0.1:9000/api/users/6453e75343185f27fa223cb8 HTTP/1.1
 Content-Type: application/json
 
 {
     "nombre": "camisa",
-    "descripcion": "algodon",
+    "descripcion": "Camsia negra de algodon, talla S",
     "precio": "200000",
     "stock": "23",
-    "tipo": "ropa"
+    "tipo": "ropa",
+    "imagen": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
 }

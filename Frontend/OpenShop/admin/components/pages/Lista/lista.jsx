@@ -9,7 +9,7 @@ import Header from '../Header/header';
 const ListaProductos = () =>{
     const [regisPro, setRegisPro] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:9000/api/users')
+        fetch('http://localhost:9000/api/productos')
           .then(res => res.json())
           .then(data => setRegisPro(data))
           .catch(err => console.log(err))

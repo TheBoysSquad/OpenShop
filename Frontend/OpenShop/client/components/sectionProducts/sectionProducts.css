@@ -1,0 +1,68 @@
+.productos{
+    margin: 20px;
+}
+
+.productos_titulo{
+    margin: 30px 0 20px 0;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.cartas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 30px;
+}
+
+.carta{
+    background-color: #fff;
+    width: 290px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    overflow: hidden;
+}
+
+.carta_img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.carta_img img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.carta_info{
+    padding: 20px;
+    text-align: center;
+}
+
+.carta_titulo{
+    font-size: 1rem;
+    color: #666;
+}
+
+.carta_descrip{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.carta_tipo{
+    font-size: 1rem;
+    color: #666;
+}
+
+.carta_precio{
+    font-size: 20px;
+    font-weight: bold;
+}

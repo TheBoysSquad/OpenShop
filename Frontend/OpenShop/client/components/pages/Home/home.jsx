@@ -1,14 +1,25 @@
 import './home.css';
+import { useState } from 'react';
 /* Pages */
 import Header from '../Header/header';
+import Footer from '../Footer/footer';
+/* Components */
+import SectionProducts from '../../sectionProducts/sectionProducts';
+/* Imagenes */
 import img from '../../../assets/img/hero.png';
 
 const Home = () => {
-    return <> <Header />
-    <div className="linea"></div>
-    <div>
-        <img src={img} alt='hero' className='hero'/>
+    const [carrito, setCarrito] = useState([]);
+    return <>
+    <div className='hero'>
+        <Header />
+        <div className="linea"></div>
+        <div className="hero_img">
+            <img src={img} alt='hero'/>
+        </div>
     </div>
+    <SectionProducts carrito={carrito} setCarrito={setCarrito} />
+    <Footer />
     </>
 }
 

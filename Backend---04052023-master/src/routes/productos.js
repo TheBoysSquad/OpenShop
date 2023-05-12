@@ -1,36 +1,36 @@
 //  Modulos importantes
 const express = require('express');
 const router =  express.Router();
-const userSchema = require('../models/user')
+const productosSchema = require('../models/productos')
 
 // Crear usuario(POST)
-router.post('/users', (req, res) =>{
-    const user = userSchema(req.body);
-    user.save()
+router.post('/productos', (req, res) =>{
+    const productos = productosSchema(req.body);
+    productos.save()
     .then( (data) => res.json(data) )
     .catch( (err) => res.json({ msg: err}))
 });
 // Obtener todos los usuarios
-router.get('/users', (req, res) =>{
-    userSchema
+router.get('/productos', (req, res) =>{
+    productosSchema
     .find()
     .then( (data) => res.json(data) )
     .catch( (err) => res.json({ msg: err}))
 });
 
 // Obtener por ID
-router.get('/users/:id', (req, res) =>{
+router.get('/productos/:id', (req, res) =>{
     const { id } = req.params;
-    userSchema
+    productosSchema
         .findById(id)
         .then( (data) => res.json(data) )
         .catch( (err) => res.json({ msg: err}))
 });
 // Actualizar por ID el usuario
-router.put('/users/:id', (req, res) =>{
+router.put('/productos/:id', (req, res) =>{
     const { id } = req.params;
     const { nombre, descripcion, precio, stock, tipo } = req.body;
-    userSchema
+    productosSchema
         .updateOne({ _id: id }, { $set:{ nombre, descripcion, precio, stock, tipo } })
         .then((data) => res.json(data))
         .catch((err) => res.json({ msg: err}))

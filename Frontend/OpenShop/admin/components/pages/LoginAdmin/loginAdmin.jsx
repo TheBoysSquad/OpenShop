@@ -1,4 +1,4 @@
-import './login.css';
+import './loginAdmin.css';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 import HomeAdmin from '../Home/home';
 import { Nav } from 'react-bootstrap';
 
-function Login() {
+function LoginAdmin() {
 
   const [login, setLogin] = useState(false);
   const [user, setUser] = useState('');
@@ -56,4 +56,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginAdmin;
