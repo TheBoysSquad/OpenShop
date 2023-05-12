@@ -20,7 +20,6 @@ const SectionProducts = ({carrito = [], setCarrito}) => {
   const agregarProducto = (producto) =>{
     setCarrito([...carrito, producto]);
   }
-  console.log(carrito)
 
     return (<>
         <div className='productos'>

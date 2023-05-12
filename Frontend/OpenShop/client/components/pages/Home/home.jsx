@@ -12,7 +12,7 @@ const Home = () => {
     const [carrito, setCarrito] = useState([]);
     return <>
     <div className='hero'>
-        <Header />
+        <Header carrito={carrito}/>
         <div className="linea"></div>
         <div className="hero_img">
             <img src={img} alt='hero'/>
