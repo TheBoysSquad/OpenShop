@@ -1,7 +1,7 @@
 import './products.css';
 import { useState, useEffect } from 'react';
 import Header from '../Header/header';
-import Boton from '../../Boton/boton';
+import BotonComprar from '../../BotonComprar/botonComprar';
 import Carrito from '../Carrito/carrito';
 
 const Productos = () => {
@@ -39,7 +39,7 @@ const Productos = () => {
                 <p className="carta_descrip">{producto.descripcion}</p>
                 <p className="carta_tipo">Categoria: {producto.tipo}</p>
                 <p className="carta_precio">$ {producto.precio}</p>
-                <Boton texto="Comprar" onClick={() => agregarProducto(producto)} />
+                <BotonComprar texto="Comprar" onClick={() => agregarProducto(producto)} />
               </div>
             </div>
           ))}

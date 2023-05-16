@@ -1,6 +1,7 @@
 import './header.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import Carrito from '../Carrito/carrito';
 
 const Header = ({ carrito, setCarrito }) => {
@@ -29,7 +30,7 @@ const Header = ({ carrito, setCarrito }) => {
           <Link className="carrito-button" onClick={mostrarCarrito}>
             <box-icon name='cart-alt' type='solid' color='#ffffff'></box-icon>
           </Link>
-          <Link to='/registrar' className='icono_link'>
+          <Link to='/login' className='icono_link'>
             <box-icon name='user' type='solid' color='#ffffff' ></box-icon>
           </Link>
         </div>
@@ -37,6 +38,10 @@ const Header = ({ carrito, setCarrito }) => {
       {carritoActive && <Carrito carrito={carrito} setCarrito={setCarrito} />}
     </>
   );
+};
+Header.propTypes = {
+  carrito: PropTypes.array.isRequired,
+  setCarrito: PropTypes.func.isRequired,
 };
 
 export default Header;

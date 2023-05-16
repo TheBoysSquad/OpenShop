@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from '../client/components/pages/Home/home';
 import Error from '../client/components/pages/404/404';
 import Productos from '../client/components/pages/Products/products';
+import Login from '../client/components/pages/Login/login';
 /* Pages Admin */
 import LoginAdmin from '../admin/components/pages/LoginAdmin/loginAdmin';
 import HomeAdmin from '../admin/components/pages/Home/home';
@@ -23,6 +24,7 @@ function App() {
           <Route path="*" element={ <Error /> } />
           <Route path="/" element={ <Home carrito={carrito} setCarrito={setCarrito} /> } />
           <Route path="/productos" element={<Productos carrito={carrito} setCarrito={setCarrito} />} />
+          <Route path="/login" element={<Login />} />
           { /* Admin */ }
           <Route path="/admin" element={ <LoginAdmin /> } />
           <Route path="/home" element={ <HomeAdmin /> } />

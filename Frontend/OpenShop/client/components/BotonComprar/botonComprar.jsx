@@ -1,8 +1,8 @@
-import './boton.css';
+import './botonComprar.css';
 import PropTypes from 'prop-types';
 
-const Boton = (props) => {
-    Boton.propTypes = {
+const BotonComprar = (props) => {
+    BotonComprar.propTypes = {
     texto: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,
   };
@@ -11,4 +11,4 @@ const Boton = (props) => {
     )
 }
 
-export default Boton;
+export default BotonComprar;

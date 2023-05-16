@@ -1,68 +1,56 @@
-.productos{
-    margin: 20px;
-}
-
-.productos_titulo{
-    margin: 30px 0 20px 0;
-    font-size: 25px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: center;
-}
-
-.cartas{
+.categorias{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 30px;
 }
 
-.carta{
-    background-color: #fff;
-    width: 290px;
+.categoria{
+    width: 300px;
+    height: 180px;
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    transition: 0.5s;
 }
 
-.carta_img{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
+.categoria::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
-.carta_img img{
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
+.categoria:hover{
+    width: 30%;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
-.carta_info{
+.categoria_info{
     padding: 20px;
     text-align: center;
 }
 
-.carta_titulo{
-    font-size: 1rem;
-    color: #666;
-}
-
-.carta_descrip{
+.categoria_titulo{
     font-size: 20px;
-    font-weight: bold;
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
 }
 
-.carta_tipo{
+.categoria_descrip{
     font-size: 1rem;
-    color: #666;
-}
-
-.carta_precio{
-    font-size: 20px;
     font-weight: bold;
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
 }
