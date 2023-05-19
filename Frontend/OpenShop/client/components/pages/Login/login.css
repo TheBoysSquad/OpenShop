@@ -51,36 +51,6 @@
     box-sizing: border-box;
 }
 
-input[type='text'],
-input[type='password'] {
-  width: 250px;
-  height: 50px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 0 5px 5px 0;
-  padding-left: 10px;
-  outline: none;
-}
-
-input[type='text']::placeholder,
-input[type='password']::placeholder{
-    color: #505050;
-    transition: transform 0.5s ease-in-out;
-}
-
-input[type='text']:focus::placeholder,
-input[type='password']:focus::placeholder{
-    transform: scale(0);
-}
-
-input[type="button"]{
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    padding-left: 10px;
-    outline: none;
-}
-
 .form_inputs{
     height: 100%;
     display: flex;
@@ -94,6 +64,46 @@ input[type="button"]{
     border-radius: 5px 0 0 5px;
     height: 50px;
     border: none;
+}
+
+.name, .pass {
+  width: 250px;
+  height: 50px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  padding-left: 10px;
+  outline: none;
+}
+
+.name::placeholder, .pass::placeholder{
+    color: #505050;
+    transition: transform 0.5s ease-in-out;
+}
+
+.name:focus::placeholder, .pass:focus::placeholder{
+    transform: scale(0);
+}
+
+.form_inputs:last-of-type .form_iconos{
+    border: none;
+    border-radius: 0 5px 5px 0;
+    padding: 0 5px 0 0;
+}
+
+.boton_login{
+    border: none;
+    background-color: white;
+    color: #000000;
+    padding: 8px 16px;
+    border-radius: 5px 0 0 5px;
+    transition: all 0.3s ease;
+}
+
+.boton_login:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
 }
 
 

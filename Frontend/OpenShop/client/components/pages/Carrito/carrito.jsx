@@ -2,30 +2,7 @@ import './carrito.css';
 import PropTypes from 'prop-types';
 
 const Carrito = ({ carrito, setCarrito }) => {
-    const eliminar = (producto) =>{
-        const productos = carrito.filter((item) => item.id !== producto.id);
-        setCarrito(productos);
-    }
-
-    const aumentar = (producto) =>{
-        const productos = carrito.map((item) => {
-            if(item.id === producto.id){
-                return{...item, cantidad: item.cantidad+1};
-            }
-            return item;
-        })
-        setCarrito(productos);
-    }
-
-    const disminuir = (producto) => {
-        const productos = carrito.map((item) => {
-            if(item.id === producto.id){
-                return{...item, cantidad: item.cantidad>1 ? item.cantidad - 1 : 1};
-            }
-            return item;
-        })
-        setCarrito(productos);
-    }
+    
   return (
     <>
       <div className='carrito'>
@@ -43,11 +20,23 @@ const Carrito = ({ carrito, setCarrito }) => {
                         <p>categoria: {producto.tipo}</p>
                         <p>$ {producto.precio}</p>
                         <div className="carrito_cantidad">
-                            <button onClick={() => disminuir(producto)}>-</button>
+                            <button>
+                              <span className='carrito_iconos'>
+                                <box-icon name='minus'></box-icon>
+                              </span>
+                            </button>
                             <span>{producto.cantidad}</span>
-                            <button onClick={() => aumentar(producto)}>+</button>
+                            <button>
+                              <span className='carrito_iconos'>
+                                <box-icon name='plus'></box-icon>
+                              </span>
+                            </button>
                         </div>
-                        <button onClick={() => eliminar(producto)} className="carrito_eliminar">Eliminar</button>
+                        <button className="carrito_eliminar">
+                          <span className='carrito_iconos'>
+                            <box-icon name='trash'></box-icon>
+                          </span>
+                        </button>
                     </div>
                 </div>
               </li>

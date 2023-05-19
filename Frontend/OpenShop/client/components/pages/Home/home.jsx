@@ -9,7 +9,7 @@ import SectionProducts from '../../sectionProducts/sectionProducts';
 import img from '../../../assets/img/hero.png';
 
 const Home = () => {
-    const [carrito] = useState([]);
+    const [carrito, setCarrito] = useState([]);
     const cards = [
         {
           titulo: "Tecnologia",
@@ -29,7 +29,7 @@ const Home = () => {
       ]
     return <>
     <div className='hero'>
-        <Header carrito={carrito}/>
+        <Header carrito={carrito} setCarrito={setCarrito}/>
         <div className="linea"></div>
         <div className="hero_img">
             <img src={img} alt='hero'/>

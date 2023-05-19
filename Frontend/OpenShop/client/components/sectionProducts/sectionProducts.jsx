@@ -8,9 +8,9 @@ const SectionProducts = ({cards}) => {
   }
     return (<>
         <section>
-          <div className='categorias' onClick={redirigir}>
+          <div className='categorias'>
             {cards.map((card, index) => (
-              <div key={index} className='categoria' style={{ backgroundImage: `URL(${card.imagen})` }}>
+              <div key={index} className='categoria' onClick={redirigir} style={{ backgroundImage: `URL(${card.imagen})` }}>
                 <div className='categoria_info'>
                   <h3 className='categoria_titulo'>{card.titulo}</h3>
                   <p className='categoria_descrip'>{card.descripcion}</p>

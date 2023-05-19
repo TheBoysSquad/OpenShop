@@ -1,10 +1,53 @@
 import './footer.css';
+import { Link } from 'react-router-dom';
 
 const Footer = () =>{
     return(
-            <div className="footer-container">
-                <p>Copyright © 2023</p>
-            </div>
+            <section className="footer">
+                <div className='footer_container'>
+                    <div className='footer_menu'>
+                        <h5 className='footer_titulo'>Menu</h5>
+                        <ul>
+                            <li>
+                                <Link className='footer_link'>Home</Link>
+                            </li>
+                            <li>
+                                <Link className='footer_link'>Productos</Link>
+                            </li>
+                            <li>
+                                <Link className='footer_link'>Contacto</Link>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className='footer_menu'>
+                        <h5 className='footer_titulo'>Información</h5>
+                        <ul>
+                            <li>
+                                <Link className='footer_link'>Sobre nosotros</Link>
+                            </li>
+                            <li>
+                                <Link className='footer_link'>Terminos & Condiciones</Link>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className='footer_redes'>
+                        <h5 className='footer_titulo'>Redes sociales</h5>
+                        <ul>
+                            <li>
+                                <box-icon name='facebook' type='logo' color='#ffffff' ></box-icon>
+                            </li>
+                            <li>
+                                <box-icon name='instagram' type='logo' color='#ffffff' ></box-icon>
+                            </li>
+                            <li>
+                                <box-icon name='twitter' type='logo' color='#ffffff' ></box-icon>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
     )
 }
 

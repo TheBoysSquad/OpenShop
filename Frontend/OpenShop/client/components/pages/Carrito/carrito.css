@@ -10,14 +10,12 @@
     transform-origin: top right;
 }
 
-.carrito h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
 .carrito ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .carrito li {
@@ -30,11 +28,6 @@
     align-items: center;
     justify-content: center;
 }
-.carrito_imagen {
-    max-width: 100px;
-    height: auto;
-    margin-right: 10px;
-}
 
 .carrito_info h3 {
     font-size: 16px;
@@ -44,6 +37,12 @@
 .carrito_info p {
     font-size: 14px;
     margin-bottom: 5px;
+}
+
+.carrito_imagen {
+    max-width: 100px;
+    height: auto;
+    margin-right: 10px;
 }
 
 .carrito_cantidad {
@@ -56,9 +55,14 @@
 .carrito_cantidad button {
     background-color: #ccc;
     border: none;
-    padding: 5px 10px;
+    border-radius: 8px;
+    padding: 5px;
     margin-right: 5px;
     cursor: pointer;
+}
+
+.carrito_cantidad button:hover{
+    background-color: #8d8d8d;
 }
 
 .carrito_cantidad span {
@@ -76,7 +80,6 @@
     transition: all 0.3s ease;
 }
 
-.carrito_eliminar:hover {
+.carrito_eliminar:hover{
     background-color: #ff0000dd;
-    color: #ffffff;
 }
