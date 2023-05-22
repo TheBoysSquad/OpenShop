@@ -1,0 +1,14 @@
+// Para registrar un producto u obtener info
+
+req.body = {
+  "product_name":"Camisa OverSize",
+  "product_desc":"Camiseta xxl oversize",
+  "product_price": 200.0000, 
+  "product_stock": 40, 
+  "product_category": "Ropa", 
+  "product_type":"Camisa", 
+  "product_quantity": 100,
+  "product_image":"http:///"
+  
+}
+
