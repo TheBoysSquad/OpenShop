@@ -1,8 +1,8 @@
 import './nuevosProductos.css';
 /* Hook */
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 /* Componets */
-import { Form, Button, Table } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 /* Pages */
 import Header from '../Header/header';
 
@@ -27,14 +27,6 @@ const NuevosProductos = () =>{
             }
             limpiarCampos();
         }
-        useEffect(() => {
-          fetch("http://localhost:9000/api/productos", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ regisPro })
-          });
-        }, [regisPro]);
-
 
         // Importar funciones en arhcivos JS
         function limpiarCampos(){
@@ -85,36 +77,6 @@ const NuevosProductos = () =>{
             </Button>
           </Form>
       </div>
-      <h1>Lista de productos</h1>
-      <Table striped bordered hover>
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Precio</th>
-                    <th>Stock</th>
-                    <th>Tipo</th>
-                    <th>Imagen</th>
-                </tr>
-            </thead>
-            <tbody>
-
-                { regisPro.map((producto,index)  => (
-                    <tr key={index}>
-                        <td>{index+1}</td>
-                        <td>{producto.nombre}</td>
-                        <td>{producto.descrip}</td>
-                        <td>{producto.precio}</td>
-                        <td>{producto.stock}</td>
-                        <td>{producto.tipo}</td>
-                        <td>
-                            <img src={producto.imagen} alt={producto.nombre}/>
-                        </td>
-                    </tr>
-                ))}
-            </tbody>
-      </Table>
     </>
     )
 }

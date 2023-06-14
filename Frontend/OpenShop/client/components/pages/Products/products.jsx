@@ -1,5 +1,6 @@
 import './products.css';
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 import Header from '../Header/header';
 import BotonComprar from '../../BotonComprar/botonComprar';
 import Carrito from '../Carrito/carrito';
@@ -14,10 +15,14 @@ const Productos = () => {
 
   const [productos, setProductos] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:9000/api/productos')
-      .then(res => res.json())
-      .then(data => setProductos(data))
-      .catch(err => console.log(err))
+    axios.get('http://localhost:9000/products')
+      .then(response => {
+        setProductos(response.data);
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }, []);
 
   const agregarProducto = (producto) => {
@@ -32,7 +37,7 @@ const Productos = () => {
           {productos.map((producto, index) => (
             <div className='carta' key={index}>
               <div className='carta_img'>
-                <img src={producto.imagen} alt={producto.nombre} />
+                <img src={producto.image} alt={producto.nombre} />
               </div>
               <div className='carta_info'>
                 <h5 className='carta_titulo'>{producto.nombre}</h5>
