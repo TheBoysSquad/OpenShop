@@ -1,9 +1,9 @@
-import './products.css';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import Header from '../Header/header';
-import BotonComprar from '../../BotonComprar/botonComprar';
-import Carrito from '../Carrito/carrito';
+import "./products.css";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import Header from "../Header/header";
+import BotonComprar from "../../BotonComprar/botonComprar";
+import Carrito from "../Carrito/carrito";
 
 const Productos = () => {
   const [carrito, setCarrito] = useState([]);
@@ -15,12 +15,13 @@ const Productos = () => {
 
   const [productos, setProductos] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost:9000/products')
-      .then(response => {
+    axios
+      .get("http://localhost:9000/products")
+      .then((response) => {
         setProductos(response.data);
         console.log(response);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }, []);
@@ -33,24 +34,30 @@ const Productos = () => {
     <>
       <Header carrito={carrito} mostrarCarrito={mostrarCarrito} />
       <div>
-        <div className='cartas'>
+        <div className="cartas">
           {productos.map((producto, index) => (
-            <div className='carta' key={index}>
-              <div className='carta_img'>
-                <img src={producto.image} alt={producto.nombre} />
+            <div className="carta" key={index}>
+              <div className="carta_img">
+                <img
+                  src={producto.product_image?.url}
+                  alt={producto.product_image}
+                />
               </div>
-              <div className='carta_info'>
-                <h5 className='carta_titulo'>{producto.nombre}</h5>
-                <p className="carta_descrip">{producto.descripcion}</p>
-                <p className="carta_tipo">Categoria: {producto.tipo}</p>
-                <p className="carta_precio">$ {producto.precio}</p>
-                <BotonComprar texto="Comprar" onClick={() => agregarProducto(producto)} />
+              <div className="carta_info">
+                <h5 className="carta_titulo">{producto.product_name}</h5>
+                <p className="carta_descrip">{producto.product_desc}</p>
+                <p className="carta_tipo">Categoria: {producto.product_type}</p>
+                <p className="carta_precio">$ {producto.product_price}</p>
+                <BotonComprar
+                  texto="Comprar"
+                  onClick={() => agregarProducto(producto)}
+                />
               </div>
             </div>
           ))}
         </div>
       </div>
-      {carritoActive && <Carrito carrito={carrito} setCarrito={setCarrito}/>}
+      {carritoActive && <Carrito carrito={carrito} setCarrito={setCarrito} />}
     </>
   );
 };
