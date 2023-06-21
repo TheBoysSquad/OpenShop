@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "../Header/header";
 import BotonComprar from "../../BotonComprar/botonComprar";
 import Carrito from "../Carrito/carrito";
+import Footer from "../Footer/footer";
 
 const Productos = () => {
   const [carrito, setCarrito] = useState([]);
@@ -32,7 +33,7 @@ const Productos = () => {
 
   return (
     <>
-      <Header carrito={carrito} mostrarCarrito={mostrarCarrito} />
+      <Header carrito={carrito} setCarrito={setCarrito} mostrarCarrito={mostrarCarrito} />
       <div>
         <div className="cartas">
           {productos.map((producto, index) => (
@@ -58,6 +59,8 @@ const Productos = () => {
         </div>
       </div>
       {carritoActive && <Carrito carrito={carrito} setCarrito={setCarrito} />}
+
+      <Footer />
     </>
   );
 };

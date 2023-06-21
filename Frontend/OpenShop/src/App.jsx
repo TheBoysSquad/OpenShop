@@ -12,6 +12,7 @@ import LoginAdmin from '../admin/components/pages/LoginAdmin/loginAdmin';
 import HomeAdmin from '../admin/components/pages/Home/home';
 import NuevosProductos from '../admin/components/pages/NuevosProductos/nuevosProductos';
 import ListaProductos from '../admin/components/pages/Lista/lista';
+import Contacto from '../client/components/pages/contacto/contacto';
 
 function App() {
   const [carrito, setCarrito] = useState([]);
@@ -24,6 +25,7 @@ function App() {
           <Route path="*" element={ <Error /> } />
           <Route path="/" element={ <Home carrito={carrito} setCarrito={setCarrito} /> } />
           <Route path="/productos" element={<Productos carrito={carrito} setCarrito={setCarrito} />} />
+          <Route path="/contacto" element={<Contacto carrito={carrito} setCarrito={setCarrito} />} />
           <Route path="/login" element={<Login />} />
           { /* Admin */ }
           <Route path="/admin" element={ <LoginAdmin /> } />

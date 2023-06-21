@@ -32,7 +32,7 @@ const Login = () =>{
                             <box-icon name='log-in'></box-icon>
                         </span>
                     </div>
-                    <input type="button" value="Registrarse" className='boton_regis'/>
+                    <p className='regis'>Registrarse</p>
                 </form>
             </div>
         </div>

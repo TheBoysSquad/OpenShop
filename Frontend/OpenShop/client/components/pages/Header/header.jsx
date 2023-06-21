@@ -22,7 +22,7 @@ const Header = ({ carrito, setCarrito }) => {
               <Link to='/productos' className='menu_link'>Productos</Link>
             </li>
             <li className='menu_item'>
-              <Link to='/contactos' className='menu_link'>Contactos</Link>
+              <Link to='/contacto' className='menu_link'>Contacto</Link>
             </li>
           </ul>
         </nav>

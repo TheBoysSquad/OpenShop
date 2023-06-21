@@ -1,0 +1,63 @@
+.contact-section {
+    background-color: #f1f1f1;
+    padding: 40px 0;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 6px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+.nombre::placeholder, .email::placeholder, .mensaje::placeholder{
+    color: #505050;
+    transition: transform 0.7s ease-in-out;
+}
+
+.nombre:focus::placeholder, .email:focus::placeholder, .mensaje:focus::placeholder{
+    transform: scale(0);
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-button {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}

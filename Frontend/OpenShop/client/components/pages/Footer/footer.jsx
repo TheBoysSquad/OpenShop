@@ -9,13 +9,13 @@ const Footer = () =>{
                         <h5 className='footer_titulo'>Menu</h5>
                         <ul>
                             <li>
-                                <Link className='footer_link'>Home</Link>
+                                <Link to="/" className='footer_link'>Inicio</Link>
                             </li>
                             <li>
-                                <Link className='footer_link'>Productos</Link>
+                                <Link to="/productos" className='footer_link'>Productos</Link>
                             </li>
                             <li>
-                                <Link className='footer_link'>Contacto</Link>
+                                <Link to="/contacto" className='footer_link'>Contacto</Link>
                             </li>
                         </ul>
                     </div>
@@ -36,13 +36,13 @@ const Footer = () =>{
                         <h5 className='footer_titulo'>Redes sociales</h5>
                         <ul>
                             <li>
-                                <box-icon name='facebook' type='logo' color='#ffffff' ></box-icon>
+                                <box-icon name='facebook' type='logo' color='#949494' ></box-icon>
                             </li>
                             <li>
-                                <box-icon name='instagram' type='logo' color='#ffffff' ></box-icon>
+                                <box-icon name='instagram' type='logo' color='#949494' ></box-icon>
                             </li>
                             <li>
-                                <box-icon name='twitter' type='logo' color='#ffffff' ></box-icon>
+                                <box-icon name='twitter' type='logo' color='#949494' ></box-icon>
                             </li>
                         </ul>
                     </div>

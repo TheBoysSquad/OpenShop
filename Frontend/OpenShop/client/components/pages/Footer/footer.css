@@ -1,28 +1,48 @@
-.footer{
+.footer {
     display: flex;
     flex-direction: column;
     background-color: #010000;
-}
+  }
 
-.footer_container{
+.footer_container {
     display: flex;
     justify-content: space-around;
     padding: 30px;
     list-style: none;
 }
 
-.footer_titulo{
+.footer_titulo {
     color: #ffffff;
 }
 
-.footer_container ul{
+.footer_container ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.footer_link{
+.footer_link {
     text-decoration: none;
     color: #949494;
 }
 
+.footer_link:hover {
+    color: blue
+}
 
+.footer_redes {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
+.footer_redes ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.footer_redes ul li {
+    margin-right: 10px;
+}

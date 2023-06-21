@@ -7,7 +7,7 @@ const Carrito = ({ carrito, setCarrito }) => {
       <div className="carrito">
         <ul>
           {carrito.length === 0 ? (
-            <p>No hay productos en el carrito.</p>
+            <p className="carrito_text">No hay productos en el carrito.</p>
           ) : (
             carrito.map((producto, index) => (
               <li key={index}>
